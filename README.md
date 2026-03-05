@@ -1,13 +1,7 @@
-# # Palindrome Checker App
+## Use Case 2 – Hardcoded Palindrome
 
-## Objective
-To check whether a string is a palindrome.
+The program checks whether a hardcoded string is a palindrome.
 
-## Use Case 1
-Application entry and welcome message.
-
-## Procedure
-1. Created GitHub repository
-2. Cloned repository
-3. Created IntelliJ project
-4. Implemented Use Case 1PalindroneCheckerApp
+Example:
+Input : madam
+Output : madam is a palindrome
