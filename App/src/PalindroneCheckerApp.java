@@ -1,14 +1,26 @@
 import java.util.*;
 
-// Strategy Interface
-interface PalindromeStrategy {
-    boolean checkPalindrome(String input);
-}
+public class PalindroneCheckerApp {
 
-// Stack Strategy
-class StackStrategy implements PalindromeStrategy {
+    // Simple Palindrome Check
+    static boolean simpleCheck(String input) {
 
-    public boolean checkPalindrome(String input) {
+        int start = 0;
+        int end = input.length() - 1;
+
+        while(start < end) {
+            if(input.charAt(start) != input.charAt(end))
+                return false;
+
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+
+    // Stack Based Check
+    static boolean stackCheck(String input) {
 
         Stack<Character> stack = new Stack<>();
 
@@ -22,55 +34,36 @@ class StackStrategy implements PalindromeStrategy {
 
         return input.equals(reversed);
     }
-}
-
-// Deque Strategy
-class DequeStrategy implements PalindromeStrategy {
-
-    public boolean checkPalindrome(String input) {
-
-        Deque<Character> deque = new ArrayDeque<>();
-
-        for(char c : input.toCharArray())
-            deque.addLast(c);
-
-        while(deque.size() > 1) {
-
-            if(deque.removeFirst() != deque.removeLast())
-                return false;
-        }
-
-        return true;
-    }
-}
-
-public class PalindroneCheckerApp {
 
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Choose Algorithm:");
-        System.out.println("1. Stack Strategy");
-        System.out.println("2. Deque Strategy");
-
-        int choice = sc.nextInt();
-        sc.nextLine();
-
         System.out.print("Enter string: ");
         String input = sc.nextLine();
 
-        PalindromeStrategy strategy;
+        long startTime;
+        long endTime;
 
-        if(choice == 1)
-            strategy = new StackStrategy();
-        else
-            strategy = new DequeStrategy();
+        // Simple Method
+        startTime = System.nanoTime();
+        boolean result1 = simpleCheck(input);
+        endTime = System.nanoTime();
 
-        if(strategy.checkPalindrome(input))
-            System.out.println("Palindrome");
-        else
-            System.out.println("Not a Palindrome");
+        long simpleTime = endTime - startTime;
+
+        // Stack Method
+        startTime = System.nanoTime();
+        boolean result2 = stackCheck(input);
+        endTime = System.nanoTime();
+
+        long stackTime = endTime - startTime;
+
+        System.out.println("\nSimple Method Result: " + result1);
+        System.out.println("Simple Method Time: " + simpleTime + " ns");
+
+        System.out.println("\nStack Method Result: " + result2);
+        System.out.println("Stack Method Time: " + stackTime + " ns");
 
         sc.close();
     }
