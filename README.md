@@ -1,13 +1,14 @@
-## UC11 – Object-Oriented Palindrome Service
+## UC12 – Strategy Pattern for Palindrome Algorithms
 
 Objective:
-Encapsulate palindrome checking logic inside a separate class.
+Choose a palindrome algorithm dynamically.
 
 Flow:
-1. Create PalindromeChecker class
-2. Provide checkPalindrome() method
-3. Call the method from the main application
+1. Define PalindromeStrategy interface
+2. Implement StackStrategy and DequeStrategy
+3. Inject strategy at runtime
 
 Concepts:
-- Encapsulation
-- Single Responsibility Principle
+Interface
+Polymorphism
+Strategy Pattern
