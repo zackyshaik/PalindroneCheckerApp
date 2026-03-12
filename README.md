@@ -1,11 +1,14 @@
-## UC8 – Linked List Based Palindrome Checker
+## UC9 – Recursive Palindrome Checker
 
 Objective:
-To check whether a string is a palindrome using Linked List.
+Check whether a string is a palindrome using recursion.
 
 Flow:
-1. Store characters in a LinkedList
-2. Compare first and last elements
-3. Remove both ends
-4. Repeat until list size ≤ 1
-5. If all match → Palindrome
+1. Recursive function compares first and last characters
+2. If they match, recursion continues with next characters
+3. Base condition stops recursion when indices meet
+
+Concepts:
+- Recursion
+- Base Condition
+- Call Stack
