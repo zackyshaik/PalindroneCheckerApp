@@ -1,5 +1,26 @@
 import java.util.Scanner;
 
+class PalindroneChecker {
+
+    public boolean checkPalindrone(String input) {
+
+        int start = 0;
+        int end = input.length() - 1;
+
+        while (start < end) {
+
+            if (input.charAt(start) != input.charAt(end)) {
+                return false;
+            }
+
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+}
+
 public class PalindroneCheckerApp {
 
     public static void main(String[] args) {
@@ -9,26 +30,9 @@ public class PalindroneCheckerApp {
         System.out.print("Enter a string: ");
         String input = sc.nextLine();
 
-        // Normalize string: remove spaces and convert to lowercase
-        String normalized = input.replaceAll("\\s+", "").toLowerCase();
+        PalindroneChecker checker = new PalindroneChecker();
 
-        boolean isPalindrome = true;
-
-        int start = 0;
-        int end = normalized.length() - 1;
-
-        while (start < end) {
-
-            if (normalized.charAt(start) != normalized.charAt(end)) {
-                isPalindrome = false;
-                break;
-            }
-
-            start++;
-            end--;
-        }
-
-        if (isPalindrome)
+        if (checker.checkPalindrone(input))
             System.out.println("Palindrome");
         else
             System.out.println("Not a Palindrome");
