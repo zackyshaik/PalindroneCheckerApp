@@ -1,11 +1,11 @@
-## UC7 – Deque Based Optimized Palindrome Checker
+## UC8 – Linked List Based Palindrome Checker
 
 Objective:
-To check whether a string is a palindrome using Deque (Double Ended Queue).
+To check whether a string is a palindrome using Linked List.
 
 Flow:
-1. Insert characters into Deque
-2. Compare first and last characters
+1. Store characters in a LinkedList
+2. Compare first and last elements
 3. Remove both ends
-4. Repeat until deque size ≤ 1
+4. Repeat until list size ≤ 1
 5. If all match → Palindrome
