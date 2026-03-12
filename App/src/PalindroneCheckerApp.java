@@ -1,35 +1,41 @@
-public class PalindroneCheckerApp {
+import java.util.*;
+
+public class Palindrongit add .eCheckerApp {
 
     public static void main(String[] args) {
 
-        String word = "madam";
+        Scanner sc = new Scanner(System.in);
 
-        // convert string to character array
-        char[] chars = word.toCharArray();
+        System.out.print("Enter a string: ");
+        String input = sc.nextLine();
 
-        int start = 0;
-        int end = chars.length - 1;
+        Queue<Character> queue = new LinkedList<>();
+        Stack<Character> stack = new Stack<>();
+
+        // Insert characters into Queue and Stack
+        for (char c : input.toCharArray()) {
+            queue.add(c);
+            stack.push(c);
+        }
 
         boolean isPalindrome = true;
 
-        // two pointer comparison
-        while(start < end) {
+        while (!queue.isEmpty()) {
 
-            if(chars[start] != chars[end]) {
+            char q = queue.remove();
+            char s = stack.pop();
+
+            if (q != s) {
                 isPalindrome = false;
                 break;
             }
-
-            start++;
-            end--;
         }
 
-        // print result
-        if(isPalindrome) {
-            System.out.println(word + " is a Palindrome");
-        } else {
-            System.out.println(word + " is not a Palindrome");
-        }
+        if (isPalindrome)
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not a Palindrome");
 
+        sc.close();
     }
 }
