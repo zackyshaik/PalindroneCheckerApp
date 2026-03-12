@@ -1,10 +1,11 @@
-## Use Case 4 – Character Array Based Palindrome Check
+## UC6 – Queue + Stack Based Palindrome Checker
 
-Goal:
-Check whether a string is a palindrome by converting the string into a character array.
+Objective:
+To check whether a string is a palindrome using both Queue (FIFO) and Stack (LIFO).
 
 Flow:
-1. Convert string to char[]
-2. Use two pointer technique
-3. Compare characters from start and end
-4. Display result
+1. Read input string
+2. Insert characters into Queue
+3. Push characters into Stack
+4. Compare dequeue and pop results
+5. If all characters match → Palindrome
