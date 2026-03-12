@@ -1,14 +1,13 @@
-## UC12 – Strategy Pattern for Palindrome Algorithms
+## UC13 – Performance Comparison
 
 Objective:
-Choose a palindrome algorithm dynamically.
+Compare execution time of different palindrome algorithms.
 
 Flow:
-1. Define PalindromeStrategy interface
-2. Implement StackStrategy and DequeStrategy
-3. Inject strategy at runtime
+1. Run multiple palindrome algorithms
+2. Capture execution time
+3. Display results
 
 Concepts:
-Interface
-Polymorphism
-Strategy Pattern
+System.nanoTime()
+Algorithm comparison
