@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Palindrongit add .eCheckerApp {
+public class PalindroneCheckerApp {
 
     public static void main(String[] args) {
 
@@ -9,29 +9,27 @@ public class Palindrongit add .eCheckerApp {
         System.out.print("Enter a string: ");
         String input = sc.nextLine();
 
-        Queue<Character> queue = new LinkedList<>();
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> deque = new ArrayDeque<>();
 
-        // Insert characters into Queue and Stack
-        for (char c : input.toCharArray()) {
-            queue.add(c);
-            stack.push(c);
+        // Insert characters into deque
+        for(char c : input.toCharArray()){
+            deque.addLast(c);
         }
 
         boolean isPalindrome = true;
 
-        while (!queue.isEmpty()) {
+        while(deque.size() > 1){
 
-            char q = queue.remove();
-            char s = stack.pop();
+            char first = deque.removeFirst();
+            char last = deque.removeLast();
 
-            if (q != s) {
+            if(first != last){
                 isPalindrome = false;
                 break;
             }
         }
 
-        if (isPalindrome)
+        if(isPalindrome)
             System.out.println("Palindrome");
         else
             System.out.println("Not a Palindrome");
